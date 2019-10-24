@@ -28,7 +28,7 @@ class Login
             if (!$this->db_connection->connect_errno) {
                 $user_name = $this->db_connection->real_escape_string($_POST['user_name']);
                 $sql = "select Identificacion,Clave from Usuarios
-                        WHERE  Identificacion = '" . $user_name . "' ;";
+                        WHERE  Identificacion = '".$user_name."' ;";
                     
                 $result_of_login_check = $this->db_connection->query($sql);
                 if ($result_of_login_check->num_rows == 1) {
