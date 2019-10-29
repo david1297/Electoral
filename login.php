@@ -97,11 +97,11 @@ if ($login->isUserLoggedIn() == true) {
 				<p class="lead">Ingrese a su cuenta</p>
 					<div class="form-group">
 								<label for="signin-email" class="control-label sr-only">Nit</label>
-								<input type="Text" class="form-control" id="signin-email" name="user_name" value="1112492933" placeholder="Nit o Numero de Documento" autofocus="" required>
+								<input type="Text" class="form-control" id="signin-email" name="user_name" value="" placeholder="Nit o Numero de Documento" autofocus="" required>
 							</div>
 							<div class="form-group">
 								<label for="signin-password" class="control-label sr-only">Contraseña</label>
-								<input type="password" class="form-control" id="signin-password" value="2933" placeholder="Contraseña" name="user_password" autocomplete="off" required>
+								<input type="password" class="form-control" id="signin-password" value="" placeholder="Contraseña" name="user_password" autocomplete="off" required>
 							</div>
 							<button type="submit" class="btn btn-primary btn-lg btn-block" name="login" id="submit">INICIAR SESIÓN</button>
 							

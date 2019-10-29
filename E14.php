@@ -44,7 +44,14 @@ exit;
 </nav>
 <?php 
 
-$Archivo=$_SESSION['Archivo'];
+require_once ("config/db.php");
+require_once ("config/conexion.php");
+$Usuario = $_SESSION['Identificacion'];
+$sql="SELECT Nombre FROM archivos where Usuario='$Usuario' and Estado='Asignado';";
+$query = mysqli_query($con, $sql);
+$row=mysqli_fetch_array($query);
+$Archivo=$row[0];
+
 $Pagina ='5';
 $directorio='E14';
 
@@ -82,12 +89,197 @@ $directorio='E14';
             </div>
             <div class="form-group row">
               <div class='col-md-3'>
-                <label for="Brenda">Brenda Murillo</label>
+                <label for="SOLOLISTA">SOLO POR LA LISTA</label>
               </div>
               <div class='col-md-9'>
-                <input type="text" class="form-control" id="Brenda" name="Brenda" placeholder="Brenda Murillo" onkeypress='return validaNumericos(event)'onkeyup='quitarValidacion("Brenda")'>
+                <input type="text" class="form-control" id="SOLOLISTA" name="SOLOLISTA" placeholder="SOLO POR LA LISTA" onkeypress='return validaNumericos(event)'onkeyup='quitarValidacion("Brenda")'>
               </div>  
-            </div>    
+            </div>
+            <div class="form-group row">
+              <div class='col-md-3'>
+                <label for="HARVY">HARVY MOSQUERA</label>
+              </div>
+              <div class='col-md-9'>
+                <input type="text" class="form-control" id="HARVY" name="HARVY" placeholder="HARVY MOSQUERA" onkeypress='return validaNumericos(event)'onkeyup='quitarValidacion("Brenda")'>
+              </div>  
+            </div>
+            <div class="form-group row">
+              <div class='col-md-3'>
+                <label for="RODRIGO">RODRIGO MOLANO GONZALEZ</label>
+              </div>
+              <div class='col-md-9'>
+                <input type="text" class="form-control" id="RODRIGO" name="RODRIGO" placeholder="RODRIGO MOLANO GONZALEZ" onkeypress='return validaNumericos(event)'onkeyup='quitarValidacion("Brenda")'>
+              </div>  
+            </div>
+            <div class="form-group row">
+              <div class='col-md-3'>
+                <label for="BRENDA">BRENDA LIZETH MURILLO BARCO</label>
+              </div>
+              <div class='col-md-9'>
+                <input type="text" class="form-control" id="BRENDA" name="BRENDA" placeholder="BRENDA LIZETH MURILLO BARCO" onkeypress='return validaNumericos(event)'onkeyup='quitarValidacion("Brenda")'>
+              </div>  
+            </div>
+            <div class="form-group row">
+              <div class='col-md-3'>
+                <label for="GUILLERMO">GUILLERMO RODRIGUEZ LONDOÑO</label>
+              </div>
+              <div class='col-md-9'>
+                <input type="text" class="form-control" id="GUILLERMO" name="GUILLERMO" placeholder="GUILLERMO RODRIGUEZ LONDOÑO" onkeypress='return validaNumericos(event)'onkeyup='quitarValidacion("Brenda")'>
+              </div>  
+            </div>
+            <div class="form-group row">
+              <div class='col-md-3'>
+                <label for="DORIAN">DORIAN MARULANDA TONUZCO</label>
+              </div>
+              <div class='col-md-9'>
+                <input type="text" class="form-control" id="DORIAN" name="DORIAN" placeholder="DORIAN MARULANDA TONUZCO" onkeypress='return validaNumericos(event)'onkeyup='quitarValidacion("Brenda")'>
+              </div>  
+            </div>
+            <div class="form-group row">
+              <div class='col-md-3'>
+                <label for="ENILSE">ENILSE LOPERA OCAMPO</label>
+              </div>
+              <div class='col-md-9'>
+                <input type="text" class="form-control" id="ENILSE" name="ENILSE" placeholder="ENILSE LOPERA OCAMPO" onkeypress='return validaNumericos(event)'onkeyup='quitarValidacion("Brenda")'>
+              </div>  
+            </div>
+            <div class="form-group row">
+              <div class='col-md-3'>
+                <label for="VALENTINA">VALENTINA CAPACHO FLOREZ</label>
+              </div>
+              <div class='col-md-9'>
+                <input type="text" class="form-control" id="VALENTINA" name="VALENTINA" placeholder="VALENTINA CAPACHO FLOREZ" onkeypress='return validaNumericos(event)'onkeyup='quitarValidacion("Brenda")'>
+              </div>  
+            </div>
+            <div class="form-group row">
+              <div class='col-md-3'>
+                <label for="GUSTAVO">GUSTAVO NOREÑA QUINCHIA</label>
+              </div>
+              <div class='col-md-9'>
+                <input type="text" class="form-control" id="GUSTAVO" name="GUSTAVO" placeholder="GUSTAVO NOREÑA QUINCHIA" onkeypress='return validaNumericos(event)'onkeyup='quitarValidacion("Brenda")'>
+              </div>  
+            </div>
+            <div class="form-group row">
+              <div class='col-md-3'>
+                <label for="RUBEN">RUBEN DARIO PALACIO MOSQUERA</label>
+              </div>
+              <div class='col-md-9'>
+                <input type="text" class="form-control" id="RUBEN" name="RUBEN" placeholder="RUBEN DARIO PALACIO MOSQUERA" onkeypress='return validaNumericos(event)'onkeyup='quitarValidacion("Brenda")'>
+              </div>  
+            </div>
+            <div class="form-group row">
+              <div class='col-md-3'>
+                <label for="JUANPABLO">JUAN PABLO ATEHORTUA BEDOYA</label>
+              </div>
+              <div class='col-md-9'>
+                <input type="text" class="form-control" id="JUANPABLO" name="JUANPABLO" placeholder="JUAN PABLO ATEHORTUA BEDOYA" onkeypress='return validaNumericos(event)'onkeyup='quitarValidacion("Brenda")'>
+              </div>  
+            </div>
+            <div class="form-group row">
+              <div class='col-md-3'>
+                <label for="LUISALBERTO">LUIS ALBERTO PRADO CABEZAS</label>
+              </div>
+              <div class='col-md-9'>
+                <input type="text" class="form-control" id="LUISALBERTO" name="LUISALBERTO" placeholder="LUIS ALBERTO PRADO CABEZAS" onkeypress='return validaNumericos(event)'onkeyup='quitarValidacion("Brenda")'>
+              </div>  
+            </div>
+            <div class="form-group row">
+              <div class='col-md-3'>
+                <label for="ALEJANDRO">ALEJANDRO CAICEDO CORTES</label>
+              </div>
+              <div class='col-md-9'>
+                <input type="text" class="form-control" id="ALEJANDRO" name="ALEJANDRO" placeholder="ALEJANDRO CAICEDO CORTES" onkeypress='return validaNumericos(event)'onkeyup='quitarValidacion("Brenda")'>
+              </div>  
+            </div>
+            <div class="form-group row">
+              <div class='col-md-3'>
+                <label for="NATHALIA">NATHALIA CANO OSORIO</label>
+              </div>
+              <div class='col-md-9'>
+                <input type="text" class="form-control" id="NATHALIA" name="NATHALIA" placeholder="NATHALIA CANO OSORIO" onkeypress='return validaNumericos(event)'onkeyup='quitarValidacion("Brenda")'>
+              </div>  
+            </div>
+            <div class="form-group row">
+              <div class='col-md-3'>
+                <label for="ROLLINSON">ROLLINSON RIASCO GUERRERO</label>
+              </div>
+              <div class='col-md-9'>
+                <input type="text" class="form-control" id="ROLLINSON" name="ROLLINSON" placeholder="ROLLINSON RIASCO GUERRERO" onkeypress='return validaNumericos(event)'onkeyup='quitarValidacion("Brenda")'>
+              </div>  
+            </div>
+            <div class="form-group row">
+              <div class='col-md-3'>
+                <label for="LESLIE">LESLIE MAYOLIS POSSO MORENO</label>
+              </div>
+              <div class='col-md-9'>
+                <input type="text" class="form-control" id="LESLIE" name="LESLIE" placeholder="LESLIE MAYOLIS POSSO MORENO" onkeypress='return validaNumericos(event)'onkeyup='quitarValidacion("Brenda")'>
+              </div>  
+            </div>
+            <div class="form-group row">
+              <div class='col-md-3'>
+                <label for="OLMEDO">OLMEDO MUÑOZ LOPEZ</label>
+              </div>
+              <div class='col-md-9'>
+                <input type="text" class="form-control" id="OLMEDO" name="OLMEDO" placeholder="OLMEDO MUÑOZ LOPEZ" onkeypress='return validaNumericos(event)'onkeyup='quitarValidacion("Brenda")'>
+              </div>  
+            </div>
+            <div class="form-group row">
+              <div class='col-md-3'>
+                <label for="ALFREDO">ALFREDO PINEDA TORRES</label>
+              </div>
+              <div class='col-md-9'>
+                <input type="text" class="form-control" id="ALFREDO" name="ALFREDO" placeholder="ALFREDO PINEDA TORRES" onkeypress='return validaNumericos(event)'onkeyup='quitarValidacion("Brenda")'>
+              </div>  
+            </div>
+            <div class="form-group row">
+              <div class='col-md-3'>
+                <label for="PEDRO">PEDRO PABLO ARIAS CASTILLO</label>
+              </div>
+              <div class='col-md-9'>
+                <input type="text" class="form-control" id="PEDRO" name="PEDRO" placeholder="PEDRO PABLO ARIAS CASTILLO" onkeypress='return validaNumericos(event)'onkeyup='quitarValidacion("Brenda")'>
+              </div>  
+            </div>
+            <div class="form-group row">
+              <div class='col-md-3'>
+                <label for="OLGA">OLGA MATILDE CHAUX LOZANO</label>
+              </div>
+              <div class='col-md-9'>
+                <input type="text" class="form-control" id="OLGA" name="OLGA" placeholder="OLGA MATILDE CHAUX LOZANO" onkeypress='return validaNumericos(event)'onkeyup='quitarValidacion("Brenda")'>
+              </div>  
+            </div>
+            <div class="form-group row">
+              <div class='col-md-3'>
+                <label for="ANGELA">ANGELA GUERRERO JARAMILLO</label>
+              </div>
+              <div class='col-md-9'>
+                <input type="text" class="form-control" id="ANGELA" name="ANGELA" placeholder="ANGELA GUERRERO JARAMILLO" onkeypress='return validaNumericos(event)'onkeyup='quitarValidacion("Brenda")'>
+              </div>  
+            </div>
+            <div class="form-group row">
+              <div class='col-md-3'>
+                <label for="DEIBY">DEIBY ALEXANDER TENORIO</label>
+              </div>
+              <div class='col-md-9'>
+                <input type="text" class="form-control" id="DEIBY" name="DEIBY" placeholder="DEIBY ALEXANDER TENORIO" onkeypress='return validaNumericos(event)'onkeyup='quitarValidacion("Brenda")'>
+              </div>  
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             <div class="form-group row">
               <div class='col-md-3'>
                 <label for="Blanco">Votos en Blanco</label>
@@ -127,7 +319,7 @@ $directorio='E14';
           </form>
     </div>
     <div class='col-md-6'>
-        <embed src="<?php echo $Archivo;?>#page=<?php echo $Pagina;?>&zoom=50" type="application/pdf" width="100%" height="1000px" />
+        <embed src="<?php echo $Archivo;?>#page=<?php echo $Pagina;?>&zoom=50" type="application/pdf" width="100%" height="2100px" />
        
     </div>
 </div>
@@ -234,6 +426,7 @@ function quitarValidacion(id){
 				$("#Resuesta").html("Mensaje: Cargando...");
 			  },
 			success: function(datos){
+       
         var Res = datos.split('!');
 
         if (Res[1]=='Correcto'){

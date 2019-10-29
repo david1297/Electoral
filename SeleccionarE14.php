@@ -3,7 +3,6 @@ session_start();
 require_once ("config/db.php");
 require_once ("config/conexion.php");
   $Usuario = $_SESSION['Identificacion'];
-  if($_SESSION['Archivo']==''){
     $sql =  "UPDATE archivos set Usuario ='',Estado='Pendiente' where Usuario ='$Usuario' and Estado='Asignado' ";
     $query_update = mysqli_query($con,$sql);
 
@@ -34,10 +33,6 @@ require_once ("config/conexion.php");
     }else{
       echo '!Fin!';
     }
-
-  }else{
-    echo '!Correcto!';
-  }
 
 
   

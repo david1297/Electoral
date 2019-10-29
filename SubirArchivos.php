@@ -47,22 +47,31 @@ if (@$_POST['Subir']=='Subir'){
       if ($archivo != '.' && $archivo != '..' && substr($archivo, 0, 2) !='._'){
         
         $Nombre=$directorio.'/'.$archivo;
+
+
+        $sql="SELECT count(*) FROM archivos where Nombre='$Nombre';";
+    $query = mysqli_query($con, $sql);
+    $row=mysqli_fetch_array($query);
+    $Cantidad=$row[0];
+    if ($Cantidad==0){ 
+      $sql =  "INSERT INTO  archivos(Nombre,Usuario,Estado) VALUES
       
-        $sql =  "INSERT INTO  archivos(Nombre,Usuario,Estado) VALUES
+      ('".$Nombre."', '', 'Pendiente');";
+                  $query_update = mysqli_query($con,$sql);
+                  if ($query_update) {
+                    echo '<div class="col-sm-3 col-xs-12">';
+                    echo "Archivo Subido: <strong>$Nombre</strong><br />";
+                  
+                  echo '</div>';
+                  } else {
+                    echo '<div class="col-sm-3 col-xs-12">';
+                    echo "Error al subir Archivo: <strong>$Nombre</strong><br />";
+                  
+                  echo '</div>';
+                  } }
+
       
-        ('".$Nombre."', '', 'Pendiente');";
-                    $query_update = mysqli_query($con,$sql);
-                    if ($query_update) {
-                      echo '<div class="col-sm-3 col-xs-12">';
-                      echo "Archivo Subido: <strong>$Nombre</strong><br />";
-                    
-                    echo '</div>';
-                    } else {
-                      echo '<div class="col-sm-3 col-xs-12">';
-                      echo "Error al subir Archivo: <strong>$Nombre</strong><br />";
-                    
-                    echo '</div>';
-                    }
+       
         
        
       }
